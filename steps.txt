@@ -1,0 +1,46 @@
+1. create a folder practiceMongoose
+2. open the folder path and go to terminal
+3. npm int // for package.json
+4. npm install typescript --save-dev // for typescript install
+5. npm install express --save // for express
+6. npm install mongoose --save // for mongoose
+7. create src folder and server.ts file into src and put hello world code of express
+8. npm i ts-node-dev //for node dev
+9. edit scripts in package.json with  
+     "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+10. npm run dev // for starting the server    
+11. const mongoose = require('mongoose'); // require mongoose in server.ts
+12. 
+        async function bootstrap() {
+                try{
+                    await mongoose.connect('mongodb://127.0.0.1:27017/newMongoose');
+                    console.log("Successfully database connection")
+                }
+                catch(error){
+                    console.log(`database connection failed! Error: ${error}`)
+                }
+            }
+        bootstrap() // call the function
+    
+ // for mongoose 'newMongoose' database connection create main or bootstrap function in server.ts 
+
+13. npm i cors  // for install cors middleware
+---------------------------------------------------------------------------------------
+// to organize the code follow the description below
+
+14. Create app.ts and server.ts file into src folder
+15. import cors in app.ts and app.use(cors())
+16. import express from "express" in app.ts file
+17. npm i --save-dev @types/cors // to remove cors type error
+18. npm i --save-dev @types/express // to remove express type error
+19. const app = express() // for use express in app.ts
+20. http://localhost:5000/ to check the connection
+21. app.use(express.json())
+    app.use(express.urlencoded({extended: true})) // for express data parsing
+22. Create interface, model and schema // go to mongoose typescript documentation
+23. Database is not creating automatically after connection.when you insert data 
+    it will create the database.
+
+
+
+
